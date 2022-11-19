@@ -1,3 +1,7 @@
+# created by https://github.com/BlurrySquire
+# github repo: https://github.com/BlurrySquire/Python-JSON-SaveData/
+# please do not advertise this as your own
+
 import json, os
 
 default_save = {
