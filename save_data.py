@@ -24,6 +24,10 @@ def create_save(name='save', value=default_save, indent=4):
 	with open(f'{name}.json', 'w') as f:
 		f.write(json.dumps(value, indent=indent))
 
+def auto_create_save(name='save', value=default_save, indent=4):
+		if not os.path.exists(f'{name}.json'):
+			create_save(name, value, indent)
+
 def reset_save():
 	if os.path.exists(save_name):
 		with open(save_name, 'w') as f:
