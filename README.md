@@ -7,7 +7,7 @@ This python module helps you easily create save data for your python app or game
 ```python
 import save_data as save # import the module
 
-# create the dictionary containing the default save file
+# create the JSON dictionary containing the default save
 default_save = {
   "value": "value"
 }
