@@ -32,5 +32,4 @@ save.write_save(sd, indent=4)
 
 ## Notices
 - There is more documentation coming soon, that will explain how to use each function.
-- The code isnt perfect, if there is any errors please let me know on discord.
-- My discord is: ``BlurrySquire#4961``.
+- The code isnt perfect, if there is any errors please let me know by opening an issue.
