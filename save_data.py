@@ -1,47 +1,21 @@
-# created by https://github.com/BlurrySquire
-# github repo: https://github.com/BlurrySquire/Python-JSON-SaveData/
-# please do not advertise this as your own
+# Licensed under MIT License as of April 2024
+# Created by https://github.com/BlurrySquire
+# Repo can be found at: https://github.com/BlurrySquire/Python-JSON-SaveData
 
 import json, os
 
-default_save = {
-	"user_info": {
-		"username": "guest_user"
-	},
-	"wins": 0,
-	"loses": 0
-}
+class SaveFile:
+	def __init__(self, filename: str) -> None:
+		self.filename: str = filename
 
-save_name = 'save.json'
+		# If the file doesn't exist, make it.
+		if not os.path.exists(self.filename):
+			open(self.filename, 'w').close()
 
-def set_default_save(value=default_save):
-	default_save = value
-
-def create_save(name='save', value=default_save, indent=4):
-	global save_name
-	save_name = f'{name}.json'
-
-	with open(f'{name}.json', 'w') as f:
-		f.write(json.dumps(value, indent=indent))
-
-def auto_create_save(name='save', value=default_save, indent=4):
-		if not os.path.exists(f'{name}.json'):
-			create_save(name, value, indent)
-
-def reset_save():
-	if os.path.exists(save_name):
-		with open(save_name, 'w') as f:
-			f.write(json.dumps(default_save))
-		return read_save()
-
-def read_save():
-	if os.path.exists(save_name):
-		with open(save_name, 'r') as f:
-			return json.loads(f.read())
-	else:
-		return default_save
-
-def write_save(save_value=default_save, indent=4):
-	if os.path.exists(save_name):
-		with open(save_name, 'w') as f:
-			f.write(json.dumps(save_value, indent=indent))
+	def read(self) -> dict:
+		with open(self.filename, 'r') as file:
+			return json.load(file)
+	
+	def write(self, contents: dict) -> None:
+		with open(self.filename, 'w') as file:
+			json.dump(contents, file)
