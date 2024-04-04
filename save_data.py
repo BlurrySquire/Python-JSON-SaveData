@@ -2,15 +2,18 @@
 # Created by https://github.com/BlurrySquire
 # Repo can be found at: https://github.com/BlurrySquire/Python-JSON-SaveData
 
-import json, os
+import json
+import os
 
 class SaveFile:
 	def __init__(self, filename: str) -> None:
 		self.filename: str = filename
+		self.already_existed = False
 
 		# If the file doesn't exist, make it.
 		if not os.path.exists(self.filename):
 			open(self.filename, 'w').close()
+			self.already_existed = True
 
 	def read(self) -> dict:
 		with open(self.filename, 'r') as file:
