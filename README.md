@@ -1,6 +1,9 @@
 # Python-JSON-SaveData
 This python module helps you easily create save data for your python app or game! It only requires a few function calls to work, and uses default python modules, so no need to install any other modules. There is no need to credit me but it would be appreciated.
 
+![GitHub Downloads (all assets, all releases)](https://img.shields.io/github/downloads/BlurrySquire/Python-JSON-SaveData/total?logo=github)
+![GitHub Release](https://img.shields.io/github/v/release/BlurrySquire/Python-JSON-SaveData)
+
 ## QuickStart Guide
 1. To start you must download ``save_data.py`` [here](https://github.com/BlurrySquire/Python-JSON-SaveData/blob/main/save_data.py).
 2. This is an example of the usage:
